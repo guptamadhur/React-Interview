@@ -1,12 +1,12 @@
 {
-  "name": "react-boiler-plate",
+  "name": "react-interview",
   "version": "0.1.1",
   "private": true,
   "author": "Madhur Gupta",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/guptamadhur/React-Boiler-Plate.git"
+    "url": "https://github.com/guptamadhur/React-interview.git"
   },
   "dependencies": {
     "prop-types": "^15.8.1",

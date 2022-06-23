@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./styles.css";
+import './styles.css';
 
 // https://codesandbox.io/s/lively-rgb-r0ur5i?file=/src/App.js
 
@@ -37,7 +37,7 @@ const TimerClock = () => {
     }, [timerOn]);
 
     return (
-        <div className="App">
+        <div className="timer">
             <div>
                 <h2>Timer {time} </h2>
                 <div>
