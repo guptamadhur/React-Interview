@@ -1,9 +1,10 @@
 import React from 'react';
+import TimerClock from './TimerClock/TimerClock'
 
 const App = () => {
   return (
     <div>
-      Learn React with Us!
+      <TimerClock />
     </div>
   );
 }

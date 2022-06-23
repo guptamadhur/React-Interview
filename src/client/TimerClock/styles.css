@@ -1,0 +1,15 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  span {
+    border: 1px solid black;
+    padding: 10px;
+    color: rgb(119, 119, 119);
+    margin: 10px;
+  }
+  span:hover {
+    background-color: rgb(34, 118, 227);
+    color: white;
+  }
+  
