@@ -7,7 +7,7 @@
 import { useState, useEffect, useRef } from "react";
 import "./styles.css";
 
-export default function SlideShow() {
+const SlideShow =() =>{
     const [inputSearch, setInputSearch] = useState("moon");
     const [resultSet, setResultSet] = useState([]);
     const [imgData, setImgData] = useState([]);
@@ -89,7 +89,6 @@ export default function SlideShow() {
 
     useEffect(() => {
         parserImageContainer(resultSet);
-        console.log("######fdgfdg#####")
     }, [resultSet]);
 
     return (<>
@@ -145,3 +144,5 @@ export default function SlideShow() {
     </>
     );
 }
+
+export default SlideShow;
