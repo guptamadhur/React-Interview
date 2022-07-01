@@ -4,7 +4,7 @@
 // 2. Share the url from the url bar (URL changes after you save changes).
 // 3. Share your screen.
 
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./styles.css";
 
 const SlideShow =() =>{

@@ -44,3 +44,9 @@ li {
 li:hover {
   color: rgb(34, 118, 227);
 }
+
+.flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

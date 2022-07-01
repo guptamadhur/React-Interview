@@ -8,6 +8,7 @@ const App = () => {
       <ul>
         <li onClick= {() => navigate("/timerclock")}>Timer Clock</li>
         <li onClick= {() => navigate("/slideshow")}>SlideShow</li>
+        <li onClick= {() => navigate("/todo")}>Todo List</li>
         </ul>
     </div>
   );
