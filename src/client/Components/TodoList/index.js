@@ -7,29 +7,28 @@ const TodoList = () => {
     const [todos, setTodos] = useState([{ text: "This is a sampe todo", status: false }]);
 
     const addAction = (actionName, data, funCallback) => {
-        let _list = [...lastAction, { "action": actionName, "state": data }];
-        setAction(_list);
+        setAction([...lastAction, { "action": actionName, "state": data }]);
         console.log(actionName, "to Save state: ", data);
-        setTimeout( () => {funCallback && funCallback();}, 1000);
+        funCallback && funCallback();
     }
 
     const addTodo = (text) => {
-        const newTodo = [...todos, { text, "status": false }];
+        let newTodo = [...todos, { text, "status": false }];
         setTodos(newTodo);
     }
 
     const markTodo = (index) => {
-        addAction("markTodo", Object.assign([], todos), () => {
-            const newTodo = [...todos];
+        addAction("markTodo", [...todos], () => {
+            let newTodo = [...todos];
             newTodo[index].status = !newTodo[index].status;
-            console.log("new markTodo", index, newTodo);
+            console.log("New markTodo", index, todos, newTodo);
             setTodos(newTodo);
         });
     }
 
     const removeTodo = (index) => {
-        addAction("removeTodo", [...todos],()=>{
-            const newTodo = [...todos];
+        addAction("removeTodo", [...todos], () => {
+            let newTodo = [...todos];
             newTodo.splice(index, 1);
             setTodos(newTodo);
         });
@@ -45,8 +44,8 @@ const TodoList = () => {
 
     const undo = (e) => {
         if (lastAction && lastAction.length) {
-            const stateData = lastAction.pop();
-            console.log("POP: Last Action", stateData);
+            let stateData = lastAction.pop();
+            console.log("POP: Last Action", stateData.state);
             setTodos(stateData.state);
         }
     }
