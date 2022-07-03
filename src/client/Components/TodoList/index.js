@@ -6,46 +6,47 @@ const TodoList = () => {
     const [lastAction, setAction] = useState([]);
     const [todos, setTodos] = useState([{ text: "This is a sampe todo", status: false }]);
 
-    const addAction = (actionName, data) => {
+    const addAction = (actionName, data, funCallback) => {
         let _list = [...lastAction, { "action": actionName, "state": data }];
         setAction(_list);
+        console.log(actionName, "to Save state: ", data);
+        setTimeout( () => {funCallback && funCallback();}, 1000);
     }
 
     const addTodo = (text) => {
-        addAction("addTodo", todos);
-
         const newTodo = [...todos, { text, "status": false }];
         setTodos(newTodo);
     }
 
     const markTodo = (index) => {
-        addAction("markTodo", todos);
-
-        const newTodo = [...todos];
-        console.log("markTodo", index, newTodo);
-        newTodo[index].status = !newTodo[index].status;
-        setTodos(newTodo);
+        addAction("markTodo", Object.assign([], todos), () => {
+            const newTodo = [...todos];
+            newTodo[index].status = !newTodo[index].status;
+            console.log("new markTodo", index, newTodo);
+            setTodos(newTodo);
+        });
     }
 
     const removeTodo = (index) => {
-        addAction("removeTodo", todos);
-
-        const newTodo = [...todos];
-        newTodo.splice(index, 1);
-        setTodos(newTodo);
+        addAction("removeTodo", [...todos],()=>{
+            const newTodo = [...todos];
+            newTodo.splice(index, 1);
+            setTodos(newTodo);
+        });
     }
 
     const handleSubmit = e => {
         if (!value) return;
-        addAction("submit", todos);
-        addTodo(value);
-        setValue("");
+        addAction("addTodo", [...todos], () => {
+            addTodo(value);
+            setValue("");
+        });
     };
 
     const undo = (e) => {
         if (lastAction && lastAction.length) {
             const stateData = lastAction.pop();
-            console.log("Last Action", stateData);
+            console.log("POP: Last Action", stateData);
             setTodos(stateData.state);
         }
     }
@@ -63,13 +64,11 @@ const TodoList = () => {
                 </div>
                 <div>
                     {todos.map((item, index) => (
-                        <>
-                            <div className='flex-center' key={index}>
-                                <p style={{ textDecoration: item.status ? "line-through" : "" }}>{item.text}</p>
-                                <span onClick={() => markTodo(index)}>✓</span>{' '}
-                                <span onClick={() => removeTodo(index)}>✕</span>
-                            </div>
-                        </>
+                        <div className='flex-center' key={index}>
+                            <p style={{ textDecoration: item.status ? "line-through" : "" }}>{item.text}</p>
+                            <span onClick={() => markTodo(index)}>✓</span>{' '}
+                            <span onClick={() => removeTodo(index)}>✕</span>
+                        </div>
                     ))}
                 </div>
             </div>
