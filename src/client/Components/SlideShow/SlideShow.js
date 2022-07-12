@@ -7,7 +7,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./styles.css";
 
-const SlideShow =() =>{
+const SlideShow = () => {
     const [inputSearch, setInputSearch] = useState("moon");
     const [resultSet, setResultSet] = useState([]);
     const [imgData, setImgData] = useState([]);

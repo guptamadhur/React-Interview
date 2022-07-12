@@ -9,6 +9,7 @@ const App = () => {
         <li onClick= {() => navigate("/timerclock")}>Timer Clock</li>
         <li onClick= {() => navigate("/slideshow")}>SlideShow</li>
         <li onClick= {() => navigate("/todo")}>Todo List</li>
+        <li onClick= {() => navigate("/messagecard")}>Message Card</li>
         </ul>
     </div>
   );
