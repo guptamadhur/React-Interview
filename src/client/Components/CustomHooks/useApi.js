@@ -10,9 +10,10 @@ const useApi = (url) => {
                 return response.json()
             })
             .then(json => {
-                console.log(json)
-                setLoading(false)
-                setData(json)
+                setTimeout(() => {
+                    setLoading(false)
+                    setData(json)
+                }, 1000);
             })
     };
 
