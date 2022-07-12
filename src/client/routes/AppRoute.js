@@ -4,6 +4,7 @@ import TimerClock from '../Components/TimerClock/TimerClock';
 import SlideShow from '../Components/SlideShow/SlideShow';
 import TodoList from '../Components/TodoList';
 import MessageCard from '../Components/MessageCard';
+import CustomHookView from "../Components/CustomHooks/CustomHookView"
 import App from '../Components/App';
 import "./styles.css";
 
@@ -18,6 +19,7 @@ const AppRoute = () => {
           <Route excat path="/slideshow" element={<SlideShow />} />
           <Route excat path="/todo" element={<TodoList />} />
           <Route excat path="/messagecard" element={<MessageCard />} />
+          <Route excat path='/customHook' element={<CustomHookView />} />
         </Routes>
       </div>
     </div>

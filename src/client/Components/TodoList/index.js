@@ -53,7 +53,7 @@ const TodoList = () => {
 
     return (
         <>
-            <div className="todo-container">
+            <div className="color-container">
                 <h2>Todo List</h2>
                 <div className=''>
                     <h2>Add Todo</h2>

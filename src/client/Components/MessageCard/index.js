@@ -45,7 +45,7 @@ const MessageCard = () => {
     }
 
     return (
-        <div className="msg-container">
+        <div className="color-container">
             <h2>Message List</h2>
 
             <input type="button" onClick={() => toggleShuffle(true)} value="Random" />
